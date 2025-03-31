@@ -1,11 +1,11 @@
 import { StreamingTextResponse } from 'ai'
-// import { experimental_buildLlama2Prompt } from 'ai/prompts'
+import { experimental_buildLlama2Prompt } from 'ai/prompts'
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash",
+  model: "gemini-2.0-flash",
 });
 
 // IMPORTANT! Set the runtime to edge
@@ -22,7 +22,7 @@ export async function POST(req: Request) {
         role: 'user',
         parts: [
           {
-            text: messages,
+            text: experimental_buildLlama2Prompt(messages),
           },
         ],
       },

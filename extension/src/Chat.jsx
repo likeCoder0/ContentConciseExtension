@@ -3,7 +3,7 @@ import { useChat } from 'ai/react'
 import { useEffect, useRef } from 'react';
 
 // NOTE: If deploying remotely, change this to the server's URL.
-const CHAT_API_ENDPOINT = 'http://localhost:3001/api/chat';
+const CHAT_API_ENDPOINT = 'http://localhost:3000/api/chat';
 
 export default function Chat({
     info: { transcript, metadata }
