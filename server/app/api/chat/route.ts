@@ -27,16 +27,16 @@ export async function POST(req: Request) {
         ],
       },
     ],
-    generationConfig: {
-      maxOutputTokens: 500,
-      temperature: 0.1,
-    },
+    // generationConfig: {
+    //   maxOutputTokens: 500,
+    //   temperature: 0.1,
+    // },
   });
 
   // Call text() method and clean the response
   const rawText = await result.response.text(); // Call the text() method
   const cleanedText = rawText.replace(/\*/g, ''); // Remove all asterisks (*)
-
+// console.log('Cleaned text:', cleanedText); // Log the cleaned text
   // Respond with the cleaned stream
   return new StreamingTextResponse(cleanedText, {
     headers: {
