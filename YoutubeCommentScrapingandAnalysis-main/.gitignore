@@ -1,0 +1,8 @@
+venv/
+_pycache_/
+.expo/
+0.csv
+1.csv
+negative.csv
+positive.csv
+scraped_data/

@@ -12,6 +12,7 @@
     "@google/generative-ai": "^0.21.0",
     "@huggingface/inference": "^2.5.1",
     "ai": "^2.1.32",
+    "cors": "^2.8.5",
     "marked": "^15.0.6",
     "next": "13.4.4-canary.11",
     "ollama-ai-provider": "^1.2.0",

@@ -94,3 +94,37 @@
     background-color: var(--yt-spec-additive-background);
     color: var(--yt-live-chat-header-text-color, var(--yt-live-chat-primary-text-color));
 }
+
+.button {
+    position: relative;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.button:focus {
+    outline: 4px solid rgba(0, 0, 0, 0.2);
+}
+
+.button-active {
+    background-color: #16a34a; /* Green */
+}
+
+.button-active:hover {
+    background-color: #15803d; /* Darker Green */
+}
+
+.button-inactive {
+    background-color: #2563eb; /* Blue */
+}
+
+.button-inactive:hover {
+    background-color: #1d4ed8; /* Darker Blue */
+}

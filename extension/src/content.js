@@ -6,6 +6,8 @@ import './chat.css';
 const YT_INITIAL_PLAYER_RESPONSE_RE = /ytInitialPlayerResponse\s*=\s*({.+?})\s*;\s*(?:var\s+(?:meta|head)|<\/script|\n)/;
 const CHAT_WITH_YOUTUBE_APP_ID = 'cwy-app-container';
 
+let chatInjected = false; // Flag to prevent multiple injections
+
 /**
  * Comparison function used to sort tracks by priority
  */
@@ -52,17 +54,41 @@ async function fetchTranscript(tracks) {
 }
 
 /**
+ * Waits for a specific element (like `chat-container`) to be available in the DOM.
+ * @param {string} selector - The CSS selector for the element.
+ * @returns {Promise<Element|null>} Resolves with the element or null if not found.
+ */
+async function waitForElement(selector) {
+    return new Promise((resolve) => {
+        const check = () => {
+            const element = document.querySelector(selector);
+            if (element) {
+                resolve(element);
+            } else {
+                setTimeout(check, 100); // Retry every 100ms
+            }
+        };
+        check();
+    });
+}
+
+/**
  * Injects the chat component into the page
  * @returns {Promise<boolean>} true if chat was injected, false otherwise
  */
 async function injectChat() {
+    if (chatInjected) {
+        console.log('Chat already injected, skipping.');
+        return true; // Skip injection if already done
+    }
+
     const videoID = new URLSearchParams(window.location.search).get('v');
     if (!videoID) {
         console.warn('Not on a video page. No video ID found.');
         return false;
     }
 
-    const chatContainer = document.getElementById('chat-container');
+    const chatContainer = await waitForElement('#chat-container');
     if (!chatContainer) {
         console.warn('Chat container not found on the page.');
         return false;
@@ -113,41 +139,27 @@ async function injectChat() {
         return false;
     }
 
-    const result = { transcript, metadata };
+    const result = { transcript, metadata, youtube_url: `https://www.youtube.com/watch?v=${videoID}` };
     const root = createRoot(app);
     root.render(<Chat info={result} />);
 
     chatContainer.prepend(app);
+    chatInjected = true; // Mark chat as injected
+    console.log('Chat injected successfully.');
     return true;
 }
 
 /**
  * Polls the page until the chat container is ready, then injects the chat component
  */
-const startCheckingForReady = () => {
-    const videoID = new URLSearchParams(window.location.search).get('v');
-    if (!videoID) return;
-
+function startCheckingForReady() {
     const check = async () => {
         const injected = await injectChat();
-        if (!injected) setTimeout(check, 100); // Retry every 100ms
+        if (!injected) setTimeout(check, 1200); // Retry every 1200ms
     };
     check();
-};
+}
 
-startCheckingForReady();
-
+document.addEventListener('DOMContentLoaded', startCheckingForReady);
 document.addEventListener('yt-navigate-finish', injectChat);
 document.addEventListener('yt-navigate-start', startCheckingForReady);
-document.addEventListener('DOMContentLoaded', () => {
-    const chatContainer = document.createElement('div');
-    chatContainer.id = 'chat-container';
-    chatContainer.style.position = 'fixed';
-    chatContainer.style.bottom = '0';
-    chatContainer.style.right = '0';
-    chatContainer.style.width = '300px';
-    chatContainer.style.height = '400px';
-    chatContainer.style.zIndex = '9999';
-    chatContainer.style.overflowY = 'auto';
-    document.body.appendChild(chatContainer);
-});
