@@ -117,6 +117,7 @@ Watch the demo video to see the extension in action below:
   Your browser does not support the video tag.
 </video>
 
+
 ### Video Summarization with Timestamps
 
 1. Open a YouTube video.
