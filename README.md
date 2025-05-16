@@ -113,7 +113,7 @@ This project is a cutting-edge browser extension that leverages GeminiAI and Nat
 Watch the demo video to see the extension in action below:
 
 <video controls>  
-  <source src="[https://your-demo-video-link.com/demo.mp4](https://drive.google.com/file/d/1HmEHvhztMTow2SFhRAH6IyO3c5N7UtA5/view?usp=sharing)" type="video/mp4">  
+  <source src="https://drive.google.com/file/d/1HmEHvhztMTow2SFhRAH6IyO3c5N7UtA5/view?usp=sharing" type="video/mp4">  
   Your browser does not support the video tag.  
 </video>
 
