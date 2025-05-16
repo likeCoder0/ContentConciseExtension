@@ -70,9 +70,9 @@ This project is a cutting-edge browser extension that leverages GeminiAI and Nat
    git clone https://github.com/likeCoder0/ContentConciseExtension.git  
    cd ContentConciseExtension 
   ```
-
+```
 2. **Install Frontend Dependencies**:
-  ```bash
+  ``` bash
    cd extension  
    npm install  
    ```
