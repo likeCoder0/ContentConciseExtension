@@ -112,10 +112,13 @@ This project is a cutting-edge browser extension that leverages GeminiAI and Nat
 
 Watch the demo video to see the extension in action below:
 
-<video controls>
-  <source src="https://drive.google.com/uc?export=download&id=1HmEHvhztMTow2SFhRAH6IyO3c5N7UtA5" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/QQiYCvNihAg" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+
 
 
 ### Video Summarization with Timestamps
