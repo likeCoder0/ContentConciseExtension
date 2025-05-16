@@ -1,4 +1,3 @@
-
 ---
 
 # ContentConciseExtension
@@ -7,16 +6,16 @@
 
 This project is a cutting-edge browser extension that leverages GeminiAI and Natural Language Processing (NLP) to enhance YouTube content interaction. The extension provides:
 
-1. **Real-time Video Summarization with Timestamps**: Generates concise and accurate summaries of YouTube videos, including timestamps to help users navigate to key moments quickly.
+1. **Real-time Video Summarization**: Generates concise and accurate summaries of YouTube videos,to help users navigate to key moments quickly.
 2. **Interactive Chatbot for Q\&A**: Allows users to ask questions about the video content and receive accurate answers in real-time.
 3. **Comment Sentiment Analysis with Q\&A**: Offers an in-depth analysis of viewer comments, categorizing sentiments (positive, negative, neutral) while allowing users to ask follow-up questions to extract deeper insights.
 
 ## Features
 
-### Video Summarization with Timestamps
+### Video Summarization
 
 * **Purpose**: Helps users save time by providing concise summaries of lengthy videos and easy navigation through timestamps.
-* **Technology**: Utilizes state-of-the-art GeminiAI models to process video transcripts, generate coherent summaries, and identify timestamps for each summary point.
+* **Technology**: Utilizes state-of-the-art GeminiAI models to process video transcripts, generate coherent summaries, and identify each summary point.
 * **Real-time Operation**: Summarization and timestamp generation occur as the video plays, ensuring up-to-date insights.
 
 ### Interactive Chatbot for Q\&A
@@ -71,28 +70,28 @@ This project is a cutting-edge browser extension that leverages GeminiAI and Nat
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/your-repo/youtube-summarization-extension.git  
-   cd youtube-summarization-extension  
+   git clone https://github.com/likeCoder0/ContentConciseExtension.git  
+   cd ContentConciseExtension 
    ```
 
 2. **Install Frontend Dependencies**:
 
    ```bash
-   cd frontend  
+   cd extension  
    npm install  
    ```
 
 3. **Install Backend Dependencies**:
 
    ```bash
-   cd ../backend  
+   cd .server 
    pip install -r requirements.txt  
    ```
 
 4. **Run the Backend**:
 
    ```bash
-   python app.py  
+   npm run dev  
    ```
 
 5. **Run the Frontend**:
@@ -106,6 +105,34 @@ This project is a cutting-edge browser extension that leverages GeminiAI and Nat
 
    * Load the extension files into your browser as an unpacked extension.
 
+---
+
+## Comment Analysis Server Setup
+
+To enable comment scraping and sentiment analysis, follow these steps:
+
+1. Clone or download the comment analysis repository (assumed folder name: `YoutubeCommentScrapingandAnalysis-main`).
+
+2. Navigate into the folder:
+
+   ```bash
+   cd YoutubeCommentScrapingandAnalysis-main
+   ```
+
+3. Install the required Python packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Run the comment analysis server:
+
+   ```bash
+   python main.py
+   ```
+
+---
+
 ## Demo Instructions
 
 ### Demo Video
@@ -113,17 +140,13 @@ This project is a cutting-edge browser extension that leverages GeminiAI and Nat
 Watch the demo video to see the extension in action below:
 
 [![Watch the video](https://img.youtube.com/vi/QQiYCvNihAg/0.jpg)](https://www.youtube.com/watch?v=QQiYCvNihAg)
+[![Watch the video](https://img.youtube.com/vi/UpVKuJPYbtk/0.jpg)](https://www.youtube.com/watch?v=UpVKuJPYbtk)
 
-
-
-
-
-### Video Summarization with Timestamps
+### Video Summarization
 
 1. Open a YouTube video.
 2. Activate the extension via the browser toolbar.
 3. The summary, along with timestamps, will be generated and displayed on the sidebar in real time.
-4. Click on any timestamp to navigate directly to the corresponding point in the video.
 
 ### Interactive Chatbot for Q\&A
 
