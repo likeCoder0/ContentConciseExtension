@@ -1,69 +1,66 @@
----
-
 # ContentConciseExtension
 
 ## Overview
 
 This project is a cutting-edge browser extension that leverages GeminiAI and Natural Language Processing (NLP) to enhance YouTube content interaction. The extension provides:
 
-1. **Real-time Video Summarization**: Generates concise and accurate summaries of YouTube videos,to help users navigate to key moments quickly.
-2. **Interactive Chatbot for Q\&A**: Allows users to ask questions about the video content and receive accurate answers in real-time.
-3. **Comment Sentiment Analysis with Q\&A**: Offers an in-depth analysis of viewer comments, categorizing sentiments (positive, negative, neutral) while allowing users to ask follow-up questions to extract deeper insights.
+1. **Real-time Video Summarization**: Generates concise and accurate summaries of YouTube videos, to help users navigate to key moments quickly.  
+2. **Interactive Chatbot for Q&A**: Allows users to ask questions about the video content and receive accurate answers in real-time.  
+3. **Comment Sentiment Analysis with Q&A**: Offers an in-depth analysis of viewer comments, categorizing sentiments (positive, negative, neutral) while allowing users to ask follow-up questions to extract deeper insights.
 
 ## Features
 
 ### Video Summarization
 
-* **Purpose**: Helps users save time by providing concise summaries of lengthy videos and easy navigation through timestamps.
-* **Technology**: Utilizes state-of-the-art GeminiAI models to process video transcripts, generate coherent summaries, and identify each summary point.
-* **Real-time Operation**: Summarization and timestamp generation occur as the video plays, ensuring up-to-date insights.
+- **Purpose**: Helps users save time by providing concise summaries of lengthy videos and easy navigation through timestamps.  
+- **Technology**: Utilizes state-of-the-art GeminiAI models to process video transcripts, generate coherent summaries, and identify each summary point.  
+- **Real-time Operation**: Summarization and timestamp generation occur as the video plays, ensuring up-to-date insights.
 
-### Interactive Chatbot for Q\&A
+### Interactive Chatbot for Q&A
 
-* **Purpose**: Enhances user engagement by enabling them to ask questions related to the video content and receive precise answers.
-* **Technology**: Leverages GeminiAI models to analyze video transcripts and generate context-aware responses.
-* **User Experience**: Provides a chat interface integrated into the extension for seamless interaction.
+- **Purpose**: Enhances user engagement by enabling them to ask questions related to the video content and receive precise answers.  
+- **Technology**: Leverages GeminiAI models to analyze video transcripts and generate context-aware responses.  
+- **User Experience**: Provides a chat interface integrated into the extension for seamless interaction.
 
-### Comment Sentiment Analysis with Q\&A
+### Comment Sentiment Analysis with Q&A
 
-* **Purpose**: Allows content creators to understand viewer sentiment and feedback at a glance while engaging with viewer feedback through follow-up questions.
-* **Technology**: Combines GeminiAI and NLP techniques to:
-
-  * Categorize comments into positive, neutral, or negative sentiments.
-  * Enable Q\&A functionality for exploring comment trends and detailed insights.
+- **Purpose**: Allows content creators to understand viewer sentiment and feedback at a glance while engaging with viewer feedback through follow-up questions.  
+- **Technology**: Combines GeminiAI and NLP techniques to:  
+  - Categorize comments into positive, neutral, or negative sentiments.  
+  - Enable Q&A functionality for exploring comment trends and detailed insights.
 
 ### Integration
 
-* **Frontend**: Built with React for a seamless and dynamic user experience.
-* **Backend**: Powered by Flask for efficient communication with GeminiAI models and NLP pipelines.
+- **Frontend**: Built with React for a seamless and dynamic user experience.  
+- **Backend**: Powered by Flask for efficient communication with GeminiAI models and NLP pipelines.
 
 ## Technology Stack
 
 ### Frontend
 
-* React
-* Tailwind CSS
+- React  
+- Tailwind CSS
 
 ### Backend
 
-* Flask
-* Python
+- Flask  
+- Python
 
 ### AI Models
 
-* GeminiAI Models
-* NLP libraries (e.g., NLTK, spaCy, or Hugging Face Transformers)
+- GeminiAI Models  
+- NLP libraries (e.g., NLTK, spaCy, or Hugging Face Transformers)
 
 ### Additional Tools
 
-* REST API for model integration
+- REST API for model integration
 
 ## Installation Guide
 
 ### Prerequisites
 
-* Node.js and npm installed on your system.
-* Python 3.x installed.
+- Node.js and npm installed on your system.  
+- Python 3.x installed.
 
 ### Steps
 
@@ -72,7 +69,7 @@ This project is a cutting-edge browser extension that leverages GeminiAI and Nat
    ```bash
    git clone https://github.com/likeCoder0/ContentConciseExtension.git  
    cd ContentConciseExtension 
-   ```
+````
 
 2. **Install Frontend Dependencies**:
 
